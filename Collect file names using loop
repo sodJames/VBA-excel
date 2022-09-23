@@ -1,0 +1,23 @@
+Sub GetShtByVba()
+
+    Dim sht As Worksheet, k As Long
+
+    Application.ScreenUpdating = False
+
+    k = 1
+
+    Range('a:b').Clear 
+    Range('a:a').NumberFormat = '@' 
+
+    For Each sht In Worksheets 
+        k = k + 1
+
+        Cells(k, 1) = sht.Name
+
+    Next
+
+    Range('a1:b1') = Array('sht_name', 'Delete?')
+
+    Application.ScreenUpdating = True
+
+End Sub
