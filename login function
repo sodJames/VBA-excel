@@ -1,0 +1,37 @@
+Sub login()
+
+    Dim strPassword As String    'password
+
+    Dim i As Integer             'nuber of tempt
+
+    Do
+
+        strPassword = InputBox("Please enter your password") 
+
+        If strPassword = "test" Then  
+
+            Exit Do                
+
+        Else
+
+            MsgBox ("Please enter the correct password！")
+
+        End If
+
+        i = i + 1
+
+    Loop While i < 3
+
+    If i >= 3 Then   'over the atempt
+
+        MsgBox "You account will be freeze for 24 hours！"
+
+        Application.Quit
+
+    Else
+
+        MsgBox "Welcome！"
+
+    End If
+
+End Sub
