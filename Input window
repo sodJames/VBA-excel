@@ -1,0 +1,23 @@
+Sub inputinfo()
+
+    Title = "Please enter your details"
+
+    name1 = "Name："
+
+    age1 = "Age："
+
+    address1 = "Address："
+
+    strName = InputBox(name1, Title)
+
+    age = InputBox(age1, Title)
+
+    Address = InputBox(addres1, Title)
+
+    Debug.Print "Name："; strName
+
+    Debug.Print "Age："; age
+
+    Debug.Print "Address："; Address
+
+End Sub
