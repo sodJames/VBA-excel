@@ -1,0 +1,35 @@
+Sub Grade the score()
+
+    Dim i As Integer
+
+    For i = 3 To 11
+
+        t = Sheets(1).Cells(i, 2).Value   'get scores
+
+        If t >= 90 Then
+
+            j = "A"
+
+        ElseIf t >= 80 Then
+
+            j = "B"
+
+        ElseIf t >= 70 Then
+
+            j = "C"
+
+        ElseIf t >= 60 Then
+
+            j = "D"
+
+        Else
+
+            j = "E"
+
+        End If
+
+        Sheets(1).Cells(i, 3) = j
+
+    Next
+
+End Sub
