@@ -1,0 +1,37 @@
+Sub IDnumber()
+
+    sid = InputBox("Please enter your ID code：")
+
+    i = Len(sid)
+
+    If i <> 15 And i <> 18 Then              'ID lenth check
+
+        MsgBox "ID only have length of 15 or18 digits！"
+
+        Exit Sub
+
+    End If
+
+    If i = 15 Then                           'if len=15
+
+        s = Right(sid, 1)                     'last digit
+
+    Else                                     'if len=18
+
+        s = Mid(sid, 17, 1)                   'last second digit
+
+    End If
+
+    If Int(s / 2) = s / 2 Then               'if even number
+
+        sex = "Female"
+
+    Else
+
+        sex = "Male"
+
+    End If
+
+    MsgBox "Sex：" + sex
+
+End Sub
