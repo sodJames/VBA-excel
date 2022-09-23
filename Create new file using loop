@@ -1,0 +1,36 @@
+Sub NewSht()
+
+    Dim shtActive As Worksheet, sht As Worksheet
+
+    Dim i As Long, strShtName As String
+
+    On Error Resume Next 
+
+    Set shtActive = ActiveSheet
+
+    For i = 2 To shtActive.Cells(Rows.Count, 1).End(xlUp).Row
+
+        #'skipA1, as its title
+
+        strShtName = shtActive.Cells(i, 1).Value
+
+        
+
+        Set sht = Sheets(strShtName)   
+
+        If Err Then
+
+            'if error means Sheets(t) not exist，then create new Sheet
+
+            Worksheets.Add , Sheets(Sheets.Count)
+
+            ActiveSheet.Name = strShtName 
+
+           
+
+        End If
+
+    Next
+
+    shtActive.Activate 
+End Sub
