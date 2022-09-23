@@ -1,0 +1,24 @@
+Sub ml()
+
+    Dim sht As Worksheet, i&, strShtName$
+
+    Columns(1).ClearContents  Cells(1, 1) = '目录'  i = 1 
+
+    For Each sht In Worksheets 
+
+        strShtName = sht.Name
+
+        If strShtName <> ActiveSheet.Name Then
+
+            
+            i = i + 1 
+
+            ActiveSheet.Hyperlinks.Add Anchor:=Cells(i, 1), Address:='', SubAddress:=''' & strShtName & ''!a1', TextToDisplay:=strShtName
+
+       
+
+        End If
+
+    Next
+
+End Sub
