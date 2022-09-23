@@ -1,0 +1,19 @@
+Sub Display faild scores()
+
+    Dim i As Integer
+
+    For i = 3 To 11
+
+        If Sheets(1).Cells(i, 2).Value < 50 Then
+
+            Sheets(1).Cells(i, 2).Select
+
+            Selection.Font.FontStyle = "加粗"
+
+            Selection.Font.ColorIndex = 3
+
+        End If
+
+    Next
+
+End Sub
